@@ -1,14 +1,86 @@
 @import "bootstrap";
 
+// bootstrap customization
+//navigation
+.navbar {
+    background-color: #052425;
+}
 
+.nav-item,
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-brand {
+    text-decoration: none;
+    color: #1BC8D1;
+    text-transform: uppercase;
+    font-family: 'Fredericka the Great', cursive;
+    }
+
+.navbar-brand:hover {
+    text-decoration: inherit;
+    color: #1BC8D1;
+    cursor: default;
+    }
+    
+.nav-item:hover,
+.nav-link:hover,
+.nav-link active
+ {
+    text-decoration: none;
+    color: #1BC8D1;
+}
+
+
+// own styles
+html {
+    font-family: 'Work Sans', sans-serif;
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+
+h1 {
+    font-family: 'Fredericka the Great', cursive;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    color: #10777c;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.page-content {
+    flex: 1 0 auto;
+    background-color: #b0dadb;
+    color: #052425 
+}
+
+
+
+// footer
 .footer {
     background-color: #094245;
     max-width: 100%;
+    height: 50px;
     padding: 40px 0px;
-    margin: 50px 0 0 0;
     border-top: 4px solid black;
     color: white;
     font-size: 1em;
+    flex-shrink: none;
 }
 
 .footer__content {
