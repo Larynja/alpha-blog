@@ -27,11 +27,31 @@
     
 .nav-item:hover,
 .nav-link:hover,
-.nav-link active
- {
+.nav-link active {
     text-decoration: none;
     color: #1BC8D1;
 }
+
+.btn-outline-info {
+    border-color: #1BC8D1;
+}
+
+.btn {
+    font-family: 'Fredericka the Great', cursive;
+    margin-top: 3px;
+    font-size: large;
+    color: #10777c;
+}
+.btn:hover {
+    font-weight: bold;
+}
+
+.btn-outline-info:hover,
+.btn-info:hover,
+.btn-info {
+    background-color: #1BC8D1;
+}
+
 
 
 // own styles
@@ -51,8 +71,21 @@ body {
 h1 {
     font-family: 'Fredericka the Great', cursive;
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 30px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    color: #10777c;
+}
+
+h5 {
+    font-family: 'Fredericka the Great', cursive;
+    text-align: center;
+    color: #10777c;
+}
+
+label {
+    font-family: 'Fredericka the Great', cursive;
+    margin-top: 3px;
+    font-size: larger;
     color: #10777c;
 }
 
