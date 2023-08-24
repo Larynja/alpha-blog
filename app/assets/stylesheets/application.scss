@@ -32,24 +32,54 @@
     color: #1BC8D1;
 }
 
+.btn {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: large;
+    color: #10777c;
+    transition-delay: 80ms;
+    transition-property: all;
+}
+
+.btn:hover {    
+    font-weight: bold;
+}
+
 .btn-outline-info {
     border-color: #1BC8D1;
 }
 
-.btn {
-    font-family: 'Fredericka the Great', cursive;
-    margin-top: 3px;
-    font-size: large;
-    color: #10777c;
+.btn-danger {
+    margin: 3px 5px 0px 5px;
+    background-color: #10777c;
+    border-color: #052425;
+    color: aliceblue;
 }
-.btn:hover {
-    font-weight: bold;
+
+.btn-danger:hover {
+    background-color: #7c1010bb;
+    border-color: #052425;
+    color: aliceblue;
 }
 
 .btn-outline-info:hover,
 .btn-info:hover,
 .btn-info {
+    margin: 3px 5px 0px 5px;
     background-color: #1BC8D1;
+}
+
+.alert-success {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20em;
+    border: #094245;
+    border-style: double;
+    font-size: larger;
+    font-weight: bold;
+    color: #10777c;
+    background-color: #1bc8d146;
+    border-radius: 10px;
 }
 
 
@@ -69,13 +99,13 @@ body {
 
 
 h1 {
-    font-family: 'Fredericka the Great', cursive;
-    text-align: center;
     margin-bottom: 40px;
     margin-top: 40px;
-    color: #10777c;
 }
 
+h1,
+h3,
+h2, 
 h5 {
     font-family: 'Fredericka the Great', cursive;
     text-align: center;
@@ -102,6 +132,48 @@ a:hover {
     color: #052425 
 }
 
+.message-container {
+    font-family: 'Fredericka the Great', cursive;
+    background-color: #b0dadb;
+    color: #052425;
+    text-align: center;
+}
+
+.error-container {
+    font-family: 'Fredericka the Great', cursive;
+    border: #094245;
+    border-style: double;
+}
+
+.article__block {
+    display: row;
+    box-shadow: 0.5em 0.2em #094245, -0.5em -0.2em #1ab5bd;
+    background-color: #adfbffcb;
+    margin-right: 2.5rem;
+    margin-left: 2.5rem;
+    padding: 25px 5px 15px 5px;
+    justify-content: center;  /* vertical alignment */
+    align-items: center;      /* horizontal alignment */
+}
+
+.article__card {
+    border: #094245;
+    border-style: double;
+    color: #10777c;
+    background-color: #1bc8d146;
+}
+
+.article__card:hover {
+    box-shadow: 0.5em 0.5em #094245, -0.4em -0.4em #1ab5bd;
+    transition-delay: 100ms;
+    transition-property: all;
+}
+
+.article__details {
+    margin: 25px 10px 20px 10px;
+    padding: 0px 20px 0px 20px;
+    text-align: justify;
+}
 
 
 // footer
@@ -151,3 +223,4 @@ a:hover {
 .footer__item[href]:hover {
     text-decoration: underline;
 }
+

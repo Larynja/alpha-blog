@@ -1,34 +1,25 @@
-    <% if @article.errors.any? %>
-        <h2>The following errors prevented the article from being saved:</h2>
-        <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-        </ul>
-    <% end %>
-
     <div class="container">
+        <div class="d-grid gap-2 col-8 mx-auto">
+            <%= render 'shared/errors' %>
+        </div>
         <%= form_with(model: @article, local: true ) do |f| %>
-        <div class="input-group mb-4">
-            <%= f.label :title, class: "col-2 form-label" %>
-            <div class="col-8">
-                <%= f.text_field :title, class: "form-control shadow", placeholder: "Title of article" %>
+            <div class="input-group mb-4">
+                <%= f.label :title, class: "col-2 form-label" %>
+                <div class="col-8">
+                    <%= f.text_field :title, class: "form-control shadow", placeholder: "Title of article" %>
+                </div>
             </div>
-        </div>
 
-        <div class="input-group mb-4">
-            <%= f.label :description, class: "col-2 form-label"  %>
-            <div class="col-8">
-                <%= f.text_area :description, rows: 10, class: "form-control shadow", placeholder: "Description of article"  %>
+            <div class="input-group mb-4">
+                <%= f.label :description, class: "col-2 form-label"  %>
+                <div class="col-8">
+                    <%= f.text_area :description, rows: 10, class: "form-control shadow", placeholder: "Description of article"  %>
+                </div>
             </div>
-        </div>
 
-        <p>
-    <div class="d-grid gap-2 col-3 mx-auto">
-
-            <%= f.submit class: "btn btn-outline-info btn-lg mb-3 shadow" %>
-
-            <%= link_to 'Cancel', articles_path, onclick: "return confirm('Are you sure to cancel?')", class: "btn btn-outline-danger btn-lg shadow" %>
-        </div>
-    </div>
-    <% end %>
+            <div class="d-grid gap-2 col-3 mx-auto">
+                <%= f.submit class: "btn btn-outline-info btn-lg mb-3 shadow" %>
+                <%= link_to 'Cancel', articles_path, onclick: "return confirm('Are you sure to cancel?')", class: "btn btn-outline-danger btn-lg shadow" %>
+            </div>
+         <% end %>
+   </div>
