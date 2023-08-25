@@ -5,8 +5,8 @@
     <% @articles.each do |article| %>
         <div class="row justify-content-md-center">
             <div class="card text-center col-8 mt-4 article__card mb-5 bg-white rounded">
-                <div class="card-header ">
-                    Featured
+                <div class="card-header">
+                    by <%= article.user.username if article.user%>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title"><%= link_to article.title, article_path(article) %></h5>

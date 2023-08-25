@@ -4,6 +4,7 @@
     <div class="container">
     <article class="article__block">
         <h2><%= @article.title %></h2>
+        <h5>written by  <%= @article.user.username if @article.user %></h5>
 
         <diV class="article__details">
             <%= simple_format(@article.description) %>

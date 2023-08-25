@@ -82,6 +82,10 @@
     border-radius: 10px;
 }
 
+.card-header {
+    font-style: italic;
+}
+
 
 
 // own styles
@@ -110,6 +114,11 @@ h5 {
     font-family: 'Fredericka the Great', cursive;
     text-align: center;
     color: #10777c;
+}
+
+h5 {
+    margin-top: 15px;
+    font-style: oblique;
 }
 
 label {
