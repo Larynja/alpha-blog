@@ -1,21 +1,28 @@
 <div class="page-content">
-    <h1>Showing article details</h1>
+  <h1>Showing article details</h1>
 
-    <div class="container">
-    <article class="article__block">
-        <h2><%= @article.title %></h2>
-        <h5>written by  <%= @article.user.username if @article.user %></h5>
+  <div class="container">
 
-        <diV class="article__details">
-            <%= simple_format(@article.description) %>
-        </div>
+    <article class="article__block mb-5">
+      <h2><%= @article.title %></h2>
+      <h5>written by  <%= @article.user.username if @article.user %></h5>
+
+      <diV class="article__details">
+          <%= simple_format(@article.description) %>
+      </div>
+
+      <p class="text-center">
+        <%= link_to "Edit", edit_article_path(@article), class: "btn btn-info" %>
+        <%= link_to 'Delete', article_path(@article),  class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}%>
+      </p>
     </article>
 
-        <%= link_to 'Edit article', edit_article_path(@article) %> |
-        <%= link_to 'Delete', article_path(@article), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete the article?' } %>
-    
-
+    <div class="container text-center">
+      <p>
         <%= link_to 'Back to main', root_path() %> |
         <%= link_to 'Back to articles', articles_path() %>
+      </p>
     </div>
+  </div>
+
 </div>

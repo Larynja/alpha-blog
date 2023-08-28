@@ -27,7 +27,7 @@
     </div>
   
   <div class="d-grid gap-2 col-3 mx-auto">
-    <%= f.submit "Sign Up", class: "btn btn-outline-info btn-lg mb-3 shadow" %>
+    <%= f.submit(@user.new_record? ? "Sign Up" : "Update account", class: "btn btn-outline-info btn-lg mb-3 shadow") %>
   <% end %>
     <%= link_to 'Cancel', articles_path, onclick: "return confirm('Are you sure to cancel?')", class: "btn btn-outline-danger btn-lg shadow" %>
   </div>
