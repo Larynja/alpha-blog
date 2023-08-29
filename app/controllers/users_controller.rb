@@ -9,6 +9,11 @@ class UsersController < ApplicationController
     @articles = @user.articles
   end
 
+  def index
+    @users = User.all
+  end
+
+
   def edit
     @user = User.find(params[:id])
   end
@@ -17,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "Profile was updated successfully."
-      redirect_to articles_path  # short for article_path(@article)
+      redirect_to user_path(@user)  # short for article_path(@article)
     else
       render :edit, status: :unprocessable_entity
     end
