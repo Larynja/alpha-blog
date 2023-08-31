@@ -5,15 +5,32 @@
 
     <article class="article__block mb-5">
       <h2><%= @article.title %></h2>
-      <h5>written by  <%= @article.user.username if @article.user %></h5>
+      <h5><%= link_to "by #{@article.user.username}", user_path if @article.user %></h5>
+
+      <div class="text-center article__note"> 
+        <% if @article.created_at != @article.updated_at%>
+          <small>Last edited <%= time_ago_in_words(@article.updated_at)%> ago,
+          first published on <%= @article.created_at.strftime("%Y-%m-%d") %> </small>
+        <% else %>
+          <small>published on <%= @article.created_at.strftime("%Y-%m-%d") %>, (<%= time_ago_in_words(@article.created_at) %> ago) </small>
+        <% end %>
+  
+
+      </div>
+
+      <span class="text-center">
+
+        </span>
 
       <diV class="article__details">
           <%= simple_format(@article.description) %>
       </div>
 
       <p class="text-center">
-        <%= link_to "Edit", edit_article_path(@article), class: "btn btn-info" %>
-        <%= link_to 'Delete', article_path(@article),  class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}%>
+        <% if logged_in? && @article.user == current_user %>   
+          <%= link_to "Edit", edit_article_path(@article), class: "btn btn-info" %>
+          <%= link_to 'Delete', article_path(@article),  class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}%>
+        <% end %>
       </p>
     </article>
 

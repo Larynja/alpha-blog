@@ -27,11 +27,14 @@
     
 .nav-item:hover,
 .nav-link:hover,
-.nav-link active {
+.nav-link active,
+.dropdown-item:hover {
     text-decoration: none;
     color: #1BC8D1;
 }
 
+
+// buttons
 .btn {
     font-family: 'Fredericka the Great', cursive;
     font-size: large;
@@ -68,6 +71,7 @@
     background-color: #1BC8D1;
 }
 
+//messages
 .alert-success {
     margin-top: 50px;
     margin-left: auto;
@@ -79,6 +83,20 @@
     font-weight: bold;
     color: #10777c;
     background-color: #1bc8d146;
+    border-radius: 10px;
+}
+
+.alert-danger {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20em;
+    border: #052425;
+    border-style: double;
+    font-size: larger;
+    font-weight: bold;
+    color: #f1f1f1;
+    background-color: #7c1010bb;
     border-radius: 10px;
 }
 
@@ -154,6 +172,8 @@ a:hover {
     border-style: double;
 }
 
+
+// article
 .article__block {
     display: row;
     box-shadow: 0.5em 0.2em #094245, -0.5em -0.2em #1ab5bd;
@@ -184,6 +204,14 @@ a:hover {
     text-align: justify;
 }
 
+.article__note {
+    font-family: 'Fredericka the Great', cursive;
+    color: #052425;
+    margin-top: 15px;
+}
+
+
+// pagination
 .pagination {
     background: #b0dadb;
     margin-bottom: 2em;
