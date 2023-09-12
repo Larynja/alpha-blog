@@ -1,0 +1,27 @@
+<div class="page-content">
+  <h1>Create a new category</h1>
+
+  <div class="container">
+
+    <div class="d-grid gap-2 col-8 mx-auto">
+      <%= render 'shared/errors', obj: @category %>
+    </div>
+
+    <%= form_with(model: @category, local: true ) do |f| %>
+      <div class="input-group mb-4">
+        <%= f.label :name, "Category name", class: "col-2 form-label" %>
+          <div class="col-8">
+            <%= f.text_field :name, class: "form-control shadow", placeholder: "Enter new category name" %>
+          </div>
+      </div>
+    
+    <div class="d-grid gap-2 col-3 mx-auto">
+      <%= f.submit class: "btn btn-outline-info btn-lg mb-3 shadow" %>
+    <% end %>
+      <%= link_to 'Cancel', articles_path, onclick: "return confirm('Are you sure to cancel?')", class: "btn btn-outline-danger btn-lg shadow" %>
+    </div>
+
+</div>
+
+   
+</div>
