@@ -7,6 +7,12 @@
       <h2><%= @article.title %></h2>
       <h5><%= link_to "by #{@article.user.username}", user_path(@article.user), :title =>"View #{@article.user.username}'s profile" if @article.user  %></h5>
 
+      <div class="text-center mt-3">
+        <% if @article.categories.any? %>
+         <%= render @article.categories %>
+        <% end %>
+      </div>
+
       <div class="text-center article__note"> 
         <% if @article.created_at != @article.updated_at%>
           <small>Last edited <%= time_ago_in_words(@article.updated_at)%> ago,
@@ -14,13 +20,9 @@
         <% else %>
           <small>published on <%= @article.created_at.strftime("%Y-%m-%d") %>, (<%= time_ago_in_words(@article.created_at) %> ago) </small>
         <% end %>
-  
-
       </div>
 
-      <span class="text-center">
 
-        </span>
 
       <diV class="article__details">
           <%= simple_format(@article.description) %>

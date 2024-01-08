@@ -215,6 +215,23 @@ a:hover {
     margin-top: 15px;
 }
 
+//category
+.category_badge {
+    font-family: 'Fredericka the Great', cursive;
+    color: #052425;
+    border-style: double;
+    border-color: #1ab5bd;
+    box-shadow: 0.2em 0.2em #094245, -0.2em -0.1em #1ab5bd;
+    padding: 0px 5px 0px 5px;
+    margin-left: 15px;
+}
+
+.category_badge:hover {
+    color: #1ab5bd;
+    transition-delay: 100ms;
+    transition-property: all;
+}
+
 
 // pagination
 .pagination {
