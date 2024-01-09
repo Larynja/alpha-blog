@@ -10,12 +10,15 @@
     <div class="row justify-content-md-center">
       <div class="card text-center col-6 mt-4 article__card mb-5 bg-white rounded">
 
-        <div class="card-body">
+        <div class="card-body" >
             <h5 class="card-title mb-3"><%= link_to category.name, category_path(category), :title => "see category details" %></h5>
-            </div>
+            <p>Articles in this category: <%= category.articles.count %></p>
+        </div>
 
         <div class="card-footer text-muted">
-
+          <% if category.articles.count >0 %>
+            <small>Newest article "<%= category.articles.last.title %>" from <%= time_ago_in_words(category.articles.last.created_at) %> ago </small>
+          <% end %>
         </div>
 
       </div>

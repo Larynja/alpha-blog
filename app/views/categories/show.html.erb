@@ -1,3 +1,57 @@
 <div class="page-content">
-  <h1>Showing <%= @category.name %> details</h1>
+  <h1><%= @category.name %> Articles</h1>
+
+  <div class="text-center mb-5">
+    <% if logged_in? && current_user.admin? %>
+      <%= link_to "Edit category name", edit_category_path(@category), class: "btn btn-info" %>
+    <% end %>
+  </div>
+
+ <div class="pagination">
+    <span class="pagination"><%= will_paginate @articles, :container => false %></span>
+  </div>
+
+  <div class="container">
+
+  <% @articles.each do |article| %>
+    <div class="row justify-content-md-center">
+
+      <div class="card text-center col-8 mt-4 article__card mb-5 bg-white rounded">
+        <div class="card-header">
+            by <%= link_to article.user.username, user_path(article.user), :title => "visit #{article.user.username}'s profile"%>
+            <% if article.categories.any? %>
+              <div class="text-center mt-3 small mb-2">
+              <%= render article.categories %>
+              </div>
+            <% end %>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title mb-3"><%= link_to article.title, article_path(article), :title => "see full article" %></h5>
+            
+            <p class="card-text mb-4"><%= truncate(article.description, length: 100) %></p>
+            <%= link_to "Show", article_path(article), :title => "see full article", class: "btn btn-info" %>
+            <% if logged_in? && article.user == current_user || current_user.admin? %>
+              <%= link_to "Edit", edit_article_path(article), class: "btn btn-info" %>
+              <%= link_to 'Delete', article_path(article),  class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}%>
+            <% end %>
+        </div>
+
+        <div class="card-footer text-muted">
+          <% if article.created_at != article.updated_at%>
+            <small>Last edited <%= time_ago_in_words(article.updated_at)%> ago,
+            first published on <%= article.created_at.strftime("%Y-%m-%d") %> </small>
+          <% else %>
+            <small>Published on <%= article.created_at.strftime("%Y-%m-%d") %>, <%= time_ago_in_words(article.created_at) %> ago</small>
+          <% end %>       
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+
+ <div class="pagination">
+    <span class="pagination"><%= will_paginate @articles, :container => false %></span>
+ </div>
+
 </div>

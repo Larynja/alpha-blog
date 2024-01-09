@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @articles = @user.articles
+    @articles = @user.articles.paginate(page: params[:page], per_page: 5)
   end
 
   def index
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       flash[:notice] = "Profile was updated successfully."
-      redirect_to user_path(@user)  # short for article_path(@article)
+      redirect_to user_path(@user) 
     else
       render :edit, status: :unprocessable_entity
     end
